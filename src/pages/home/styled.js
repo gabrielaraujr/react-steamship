@@ -50,7 +50,7 @@ export const CarouselSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 5rem auto;
+  margin: 3rem auto 2rem;
 
   h3 {
     width: 60%;
@@ -78,12 +78,12 @@ export const CarouselSection = styled.section`
 export const Card = styled.a`
   display: flex;
   background-color: RGB(23, 26, 33);
+  text-decoration: none;
 
   img {
     width: 100%;
     height: auto;
   }
-
 `;
 
 export const Info = styled.div`
@@ -146,19 +146,64 @@ export const Prices = styled.div`
 
 
 
+export const NewsletterSection = styled.section`
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: var(--ship-black);
 
+  h2 {
+    font-family: Archivo, sans-serif;
+    font-size: 4.5rem;
+    margin-bottom: 5rem;
+  }
 
+  p {
+    font-family: Montserrat, sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
 
-export const LinkTo = styled(Link)`
-  text-decoration: none;
+  form {
+    width: 30%;
+    display: flex;
+    align-items: center;
+
+    input {
+      width: 100%;
+      font-size: 1.6rem;
+      font-weight: 400;
+      outline: none;
+      padding: 1.5rem 1.5rem;
+      border: none;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+  }
+
 `;
 
 export const Button = styled.button`
-    background: #0099FF;
-    border: 2px solid #0099FF;
-    border-radius: 3px;
-    color: #FDFDFD;
-    font-size: 1.2rem;
-    margin: 1rem;
-    padding: 1rem 1.5rem;
+  font-family: Archivo, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  border: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  outline: none;
+  color: #fff;
+  background-color: #04d361;
+  padding: 1.9rem 3rem;
+  transition: all 0.5s;
+  cursor: pointer;
+
+  :hover { background-color: #029947; };
+`;
+
+export const LinkTo = styled(Link)`
+  text-decoration: none;
 `;

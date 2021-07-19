@@ -11,13 +11,22 @@ import StarWarsImg from '../../assets/images/star-wars.jpg';
 import WindowsIcon from '../../assets/images/windows-icon.png';
 import MacIcon from '../../assets/images/mac-icon.png';
 import LinuxIcon from '../../assets/images/linux-icon.png';
+
 import * as Style from './styled';
 
 export default function Home() {
+  const [email, setEmail] = React.useState('');
+
+  React.useEffect(() => { localStorage.clear(); }, []);
+
   const handleDragStart = (e) => e.preventDefault();
 
   const items = [
-    <Style.Card onDragStart={handleDragStart}>
+    <Style.Card
+      onDragStart={handleDragStart}
+      target="_blank"
+      href="https://store.steampowered.com/sub/127633/"
+    >
       <img src={BioshockImg} alt="" />
       <Style.Info>
         <h4>Bioshock: The Collection</h4>
@@ -40,7 +49,11 @@ export default function Home() {
         </Style.Prices>
       </Style.Info>
     </Style.Card>,
-    <Style.Card onDragStart={handleDragStart}>
+    <Style.Card
+      onDragStart={handleDragStart}
+      target="_blank"
+      href="https://store.steampowered.com/app/1237950/STAR_WARS_Battlefront_II/"
+    >
       <img src={StarWarsImg} alt="" />
       <Style.Info>
         <h4>STAR WARS™ Battlefront™ II</h4>
@@ -61,7 +74,11 @@ export default function Home() {
         </Style.Prices>
       </Style.Info>
     </Style.Card>,
-    <Style.Card onDragStart={handleDragStart}>
+    <Style.Card
+      onDragStart={handleDragStart}
+      target="_blank"
+      href="https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/"
+    >
       <img src={RedDeadImg} alt="" />
       <Style.Info>
         <h4>Red Dead Redemption 2</h4>
@@ -85,7 +102,11 @@ export default function Home() {
         </Style.Prices>
       </Style.Info>
     </Style.Card>,
-    <Style.Card onDragStart={handleDragStart}>
+    <Style.Card
+      onDragStart={handleDragStart}
+      target="_blank"
+      href="https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition/"
+    >
       <img src={SkyrimImg} alt="" />
       <Style.Info>
         <h4>The Elder Scrolls V: Skyrim Special Edition</h4>
@@ -110,6 +131,13 @@ export default function Home() {
       </Style.Info>
     </Style.Card>
   ];
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    localStorage.setItem('email', email);
+    setEmail('');
+    alert('Email cadastrado com sucesso!')
+  }
 
   return (
     <>
@@ -143,7 +171,15 @@ export default function Home() {
         />
       </Style.CarouselSection>
 
-      {/* <Style.Button>Hello Steamship!</Style.Button> */}
+      <Style.NewsletterSection>
+        <h2>Aproveite, vai ser por tempo limitado!</h2>
+        <p>Preencha o campo abaixo com seu email e fique por dentro das promoções!</p>
+
+        <form onSubmit={handleSubmit} autoComplete="off">
+          <input type="text" value={email} placeholder="email@exemplo.com" onChange={e => setEmail(e.target.value)} />
+          <Style.Button type="submit">Enviar</Style.Button>
+        </form>
+      </Style.NewsletterSection>
     </>
   );
 };
