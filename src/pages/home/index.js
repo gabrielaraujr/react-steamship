@@ -1,4 +1,5 @@
 import React from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 import Carousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
@@ -16,6 +17,8 @@ import * as Style from './styled';
 
 export default function Home() {
   const [email, setEmail] = React.useState('');
+  const isTablet = useMediaQuery({ minWidth: 700, maxWidth: 899 });
+  const isDesktop = useMediaQuery({ minWidth: 1400 });
 
   React.useEffect(() => { localStorage.clear(); }, []);
 
@@ -30,12 +33,28 @@ export default function Home() {
       <img src={BioshockImg} alt="" />
       <Style.Info>
         <h4>Bioshock: The Collection</h4>
-        <p>Volte para as cidades de Rapture e Columbia e
+        {isTablet ?
+          <p>Volte para as cidades de Rapture e Columbia e
           experimente a premiada franquia BioShock como
           nunca antes, lindamente remasterizada em 1080p.
           BioShock: The Collection contém todo o conteúdo
           single-player de BioShock, BioShock 2 e BioShock
           Infinite, todo o conteúdo add-on single-player.</p>
+        :
+          isDesktop ?
+            <p>Volte para as cidades de Rapture e Columbia e
+            experimente a premiada franquia BioShock como
+            nunca antes, lindamente remasterizada em 1080p.
+            BioShock: The Collection contém todo o conteúdo
+            single-player de BioShock, BioShock 2 e BioShock
+            Infinite, todo o conteúdo add-on single-player.</p>
+          :
+            <p>Volte para as cidades de Rapture e Columbia e
+            experimente a premiada franquia BioShock como
+            nunca antes, lindamente remasterizada em 1080p.
+            BioShock: The Collection contém todo o conteúdo...</p>
+        }
+
         <Style.Prices>
           <div>
             <span>-80%</span>
@@ -57,11 +76,25 @@ export default function Home() {
       <img src={StarWarsImg} alt="" />
       <Style.Info>
         <h4>STAR WARS™ Battlefront™ II</h4>
-        <p>Seja o herói na mais incrível experiência de
+        {isTablet ?
+          <p>Seja o herói na mais incrível experiência de
           batalha de Star Wars™ com Star Wars™ Battlefront™ II:
           Celebration Edition! Obtenha o Star Wars Battlefront
           II e a coleção completa de conteúdos de personalização
           que podem ser comprados no jogo desde o lançamento.</p>
+        :
+          isDesktop ?
+            <p>Seja o herói na mais incrível experiência de
+            batalha de Star Wars™ com Star Wars™ Battlefront™ II:
+            Celebration Edition! Obtenha o Star Wars Battlefront
+            II e a coleção completa de conteúdos de personalização
+            que podem ser comprados no jogo desde o lançamento.</p>
+          :
+            <p>Seja o herói na mais incrível experiência de
+            batalha de Star Wars™ com Star Wars™ Battlefront™ II:
+            Celebration Edition! Obtenha o Star Wars Battlefront
+            II e a coleção completa...</p>
+        }
         <Style.Prices>
           <div>
             <span>-50%</span>
@@ -82,12 +115,27 @@ export default function Home() {
       <img src={RedDeadImg} alt="" />
       <Style.Info>
         <h4>Red Dead Redemption 2</h4>
-        <p>Red Dead Redemption 2, a épica aventura de
+        {isTablet ?
+          <p>Red Dead Redemption 2, a épica aventura de
           mundo aberto da Rockstar Games aclamada pela
           crítica e o jogo mais bem avaliado desta geração
           de consoles, agora chega aprimorado para PC
           com conteúdos inéditos no Modo História,
           melhorias visuais e muito mais.</p>
+        :
+          isDesktop ?
+            <p>Red Dead Redemption 2, a épica aventura de
+            mundo aberto da Rockstar Games aclamada pela
+            crítica e o jogo mais bem avaliado desta geração
+            de consoles, agora chega aprimorado para PC
+            com conteúdos inéditos no Modo História,
+            melhorias visuais e muito mais.</p>
+          :
+            <p>Red Dead Redemption 2, a épica aventura de
+            mundo aberto da Rockstar Games aclamada pela
+            crítica e o jogo mais bem avaliado desta geração
+            de consoles, agora chega aprimorado...</p>
+        }
         <Style.Prices>
           <div>
             <span>-75%</span>
@@ -110,13 +158,29 @@ export default function Home() {
       <img src={SkyrimImg} alt="" />
       <Style.Info>
         <h4>The Elder Scrolls V: Skyrim Special Edition</h4>
-        <p>Vencedor de mais de 200 jogos do ano Awards,
+        {isTablet ?
+          <p>Vencedor de mais de 200 jogos do ano Awards,
           Skyrim Special Edition faz a fantasia épica
           ganhar vida com detalhes impressionantes. A edição
           especial inclui a crítica jogo aclamado e
           complementos com todos os novos recursos como
           arte remasterizada e efeitos, raios divinos
           volumétricos...</p>
+        :
+          isDesktop ?
+            <p>Vencedor de mais de 200 jogos do ano Awards,
+            Skyrim Special Edition faz a fantasia épica
+            ganhar vida com detalhes impressionantes. A edição
+            especial inclui a crítica jogo aclamado e
+            complementos com todos os novos recursos como
+            arte remasterizada e efeitos, raios divinos
+            volumétricos...</p>
+          :
+            <p>Vencedor de mais de 200 jogos do ano Awards,
+            Skyrim Special Edition faz a fantasia épica
+            ganhar vida com detalhes impressionantes. A edição
+            especial inclui a crítica jogo aclamado...</p>
+        }
         <Style.Prices>
           <div>
             <span>-40%</span>
@@ -158,7 +222,7 @@ export default function Home() {
       </Style.HeaderContent>
 
       <Style.CarouselSection>
-        <h3>Promoções em destaque</h3>
+        <h3>Promoções Imperdíveis!</h3>
 
         <Carousel
           items={items}

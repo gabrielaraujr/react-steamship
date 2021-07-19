@@ -5,6 +5,7 @@ export default createGlobalStyle`
     --ship-blue: #4586bc;
     --ship-blue-dark: #110b79;
     --ship-black: #1a1a1a;
+    --bg-info: #0a141d;
     --bg-prices: #040809;
     --text-prices-dark: #628291;
     --text-prices-light: #90cef5;
@@ -22,14 +23,19 @@ export default createGlobalStyle`
   html, body, #root {
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, #184353 5%, #1b2838 95%);
+    background: linear-gradient(
+      180deg,
+      #2f5564 0%,
+      #184353 50%,
+      #1b2838 100%
+    );
   }
 
   body,
   input,
   button,
   textarea {
-    font: 500 1.6rem Poppins;
+    font: 500 1.6rem Poppins, sans-serif;
   }
 
   /* Scrollbar */

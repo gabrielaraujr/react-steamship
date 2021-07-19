@@ -3,12 +3,16 @@ import { Link } from 'react-router-dom';
 
 export const HeaderContent = styled.header`
   width: 100%;
-  padding: 3rem 3rem;
+  padding: 2.5rem 0;
   background-color: RGB(23, 26, 33);
+
+  @media(min-width: 700px) {
+    padding: 3rem 0;
+  }
 `;
 
-export const Header = styled.header`
-  width: 60%;
+export const Header = styled.div`
+  width: 80%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -18,9 +22,10 @@ export const Header = styled.header`
     display: flex;
     align-items: center;
 
-    img { width: 10%; };
+    img { width: 50px; };
 
     h2 {
+      display: none;
       font-size: 2.3rem;
       color: #fff;
       text-transform: uppercase;
@@ -35,78 +40,144 @@ export const Header = styled.header`
 
     li {
       font-family: Archivo, sans-serif;
+      font-size: 1.4rem;
       text-transform: uppercase;
-      margin-left: 2rem;
+      margin-left: 1rem;
       transition: all 0.25s;
       color: #b8b6b4;
       :hover { color: #fff; };
     }
   };
+
+  @media(min-width: 700px) {
+    div {
+      img { width: 70px; };
+
+      h2 {
+        display: initial;
+        font-size: 2.3rem;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-left: 1.3rem;
+      };
+    };
+
+    li {
+      font-size: 1.6rem;
+      margin-left: 2rem;
+    }
+  };
 `;
 
 export const CarouselSection = styled.section`
-  width: 100%;
-  height: 500px;
+  width: 80%;
+  height: 700px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 3rem auto 2rem;
+  margin: 2rem auto 1rem;
 
   h3 {
-    width: 60%;
-    font-size: 1.7rem;
-    font-weight: 400;
+    font-size: 2.3rem;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1px;
     color: #fff;
-    margin: 0 auto 1.2rem auto;
-  }
+    margin: 0 auto 1.5rem auto;
+  };
 
   .alice-carousel {
-    width: 60%;
     margin: 0 auto;
     .alice-carousel__wrapper {
       border-radius: 5px;
       box-shadow: 0 0 15px 3px rgba(0 0 0 / 20%);
-      .alice-carousel__stage-item {
-        width: 100% !important;
-      }
-    }
-  }
+      .alice-carousel__stage-item { height: 100%; };
+    };
+  };
+
+  @media(min-width: 700px) {
+    width: 100%;
+    height: 750px;
+
+    h3 {
+      width: 80%;
+      font-size: 2.5rem;
+      text-align: center;
+    };
+
+    .alice-carousel { width: 80%; };
+  };
+
+  @media(min-width: 900px) { height: 500px; };
 `;
 
 export const Card = styled.a`
-  display: flex;
-  background-color: RGB(23, 26, 33);
+  line-height: 0;
   text-decoration: none;
 
   img {
     width: 100%;
     height: auto;
   }
+
+  @media(min-width: 900px) {
+    display: flex;
+    img { width: 55%; };
+  }
+
+  @media(min-width: 1400px) {
+    img { width: 1000px; };
+  };
 `;
 
 export const Info = styled.div`
   width: 100%;
-  padding: 2rem;
-  box-shadow: inset 6px 0 12px -3px rgba(0 0 0 / 50%);
+  height: 230px;
+  padding: 3rem;
+  box-shadow: inset 0px 7px 14px -1px rgba(0 0 0 / 50%);
   color: #fff;
+  background-color: var(--bg-info);
+
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr auto 1fr;
-  gap: 1rem 0;
+  gap: 1.5rem 0;
 
   h4 {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 400;
-    letter-spacing: 1px;
-  }
+  };
 
   p {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 300;
-    letter-spacing: 0.5px;
-  }
+  };
+
+  @media(min-width: 700px) {
+    gap: 0.75rem 0;
+    padding: 1.6rem;
+    height: 200px;
+    box-shadow: inset 6px 0 12px -3px rgba(0 0 0 / 50%);
+
+    h4 {
+      font-size: 2rem;
+      letter-spacing: 1px;
+    };
+
+    p {
+      font-size: 1.4rem;
+      letter-spacing: 0.5px;
+    };
+  };
+
+  @media(min-width: 900px) {
+    height: 250px;
+  };
+
+  @media(min-width: 1400px) {
+    height: 280px;
+    padding: 4.5rem;
+  };
 `;
 
 export const Prices = styled.div`
@@ -117,7 +188,7 @@ export const Prices = styled.div`
   b,
   span,
   strong,
-  .so-icons { padding: 0.25rem 0.75rem; };
+  .so-icons { padding: 0.25rem };
 
   span {
     color: var(--text-percentage);
@@ -144,8 +215,6 @@ export const Prices = styled.div`
   }
 `;
 
-
-
 export const NewsletterSection = styled.section`
   height: 400px;
   display: flex;
@@ -157,19 +226,19 @@ export const NewsletterSection = styled.section`
 
   h2 {
     font-family: Archivo, sans-serif;
-    font-size: 4.5rem;
-    margin-bottom: 5rem;
+    font-size: 3.2rem;
+    margin-bottom: 4rem;
   }
 
   p {
     font-family: Montserrat, sans-serif;
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 400;
     margin-bottom: 1rem;
   }
 
   form {
-    width: 30%;
+    width: 60%;
     display: flex;
     align-items: center;
 
@@ -182,9 +251,30 @@ export const NewsletterSection = styled.section`
       border: none;
       border-top-left-radius: 5px;
       border-bottom-left-radius: 5px;
-    }
-  }
+    };
+  };
 
+  @media(min-width: 700px) {
+    h2 {
+      font-size: 4rem;
+      margin-bottom: 5rem;
+    };
+
+    p {
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    };
+
+    form { width: 500px; };
+  };
+
+
+  @media(min-width: 1200px) {
+    h2 { font-size: 4.5rem; };
+    p { font-size: 2.1rem; };
+    form { width: 600px;  };
+  }
 `;
 
 export const Button = styled.button`
@@ -197,11 +287,14 @@ export const Button = styled.button`
   outline: none;
   color: #fff;
   background-color: #04d361;
-  padding: 1.9rem 3rem;
-  transition: all 0.5s;
+  padding: 1.87rem 3rem;
   cursor: pointer;
-
+  transition: all 0.5s;
   :hover { background-color: #029947; };
+
+  @media(min-width: 700px) {
+    padding: 1.89rem 3rem;
+  }
 `;
 
 export const LinkTo = styled(Link)`
