@@ -12,11 +12,16 @@ import StarWarsImg from '../../assets/images/star-wars.jpg';
 import WindowsIcon from '../../assets/images/windows-icon.png';
 import MacIcon from '../../assets/images/mac-icon.png';
 import LinuxIcon from '../../assets/images/linux-icon.png';
+import InstagramIcon from '../../assets/images/instagram.svg';
+import LinkedinIcon from '../../assets/images/linkedin.svg';
+import GithubIcon from '../../assets/images/github.svg';
 
 import * as Style from './styled';
 
 export default function Home() {
-  const [email, setEmail] = React.useState('');
+  const [email, setEmail] = React.useState({main: '', footer: ''});
+  const isSmallThenTablet = useMediaQuery({ maxWidth: 699 });
+  const isTabletOrMore = useMediaQuery({ minWidth: 700 });
   const isTablet = useMediaQuery({ minWidth: 700, maxWidth: 899 });
   const isDesktop = useMediaQuery({ minWidth: 1400 });
 
@@ -30,7 +35,7 @@ export default function Home() {
       target="_blank"
       href="https://store.steampowered.com/sub/127633/"
     >
-      <img src={BioshockImg} alt="" />
+      <img src={BioshockImg} alt="Imagem do jogo bioshock" />
       <Style.Info>
         <h4>Bioshock: The Collection</h4>
         {isTablet ?
@@ -73,7 +78,7 @@ export default function Home() {
       target="_blank"
       href="https://store.steampowered.com/app/1237950/STAR_WARS_Battlefront_II/"
     >
-      <img src={StarWarsImg} alt="" />
+      <img src={StarWarsImg} alt="Imagem do jogo star wars battlefront" />
       <Style.Info>
         <h4>STAR WARS™ Battlefront™ II</h4>
         {isTablet ?
@@ -112,7 +117,7 @@ export default function Home() {
       target="_blank"
       href="https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/"
     >
-      <img src={RedDeadImg} alt="" />
+      <img src={RedDeadImg} alt="Imagem do jogo red dead redemption 2" />
       <Style.Info>
         <h4>Red Dead Redemption 2</h4>
         {isTablet ?
@@ -155,7 +160,7 @@ export default function Home() {
       target="_blank"
       href="https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition/"
     >
-      <img src={SkyrimImg} alt="" />
+      <img src={SkyrimImg} alt="Imagem do jogo skyrim special edition" />
       <Style.Info>
         <h4>The Elder Scrolls V: Skyrim Special Edition</h4>
         {isTablet ?
@@ -198,10 +203,17 @@ export default function Home() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem('email', email);
-    setEmail('');
+
+    if(email.main) {
+      localStorage.setItem('email', email.main);
+      setEmail({ main: ''});
+    } else {
+      localStorage.setItem('email', email.footer);
+      setEmail({ footer: ''});
+    }
+
     alert('Email cadastrado com sucesso!')
-  }
+  };
 
   return (
     <>
@@ -240,10 +252,64 @@ export default function Home() {
         <p>Preencha o campo abaixo com seu email e fique por dentro das promoções!</p>
 
         <form onSubmit={handleSubmit} autoComplete="off">
-          <input type="text" value={email} placeholder="email@exemplo.com" onChange={e => setEmail(e.target.value)} />
+          <input type="text" value={email.main} placeholder="email@exemplo.com" onChange={e => setEmail({ main: e.target.value })} />
           <Style.Button type="submit">Enviar</Style.Button>
         </form>
       </Style.NewsletterSection>
+
+      <Style.Footer>
+        <div>
+          <div className="footer-logo-social">
+            <div className="footer-logo">
+              <img src={ShipLogo} alt="Logo da página" />
+              <h2>Steamship</h2>
+            </div>
+
+            {isSmallThenTablet &&
+              <div className="social-media">
+                <a href="https://www.instagram.com/gabrielaraujr">
+                  <img src={InstagramIcon} alt="Ícone do instagram" />
+                </a>
+                <a href="https://www.linkedin.com/in/gabrielaraujr">
+                  <img src={LinkedinIcon} alt="Ícone do linkedin" />
+                </a>
+                <a href="https://github.com/gabrielaraujr">
+                  <img src={GithubIcon} alt="Ícone do github" />
+                </a>
+              </div>
+            }
+          </div>
+
+          <p>Steamship é um e-commerce criado por Gabriel Araujo,
+          para venda de plataformas digitais como jogos e aplicativos de
+          programação e fornece serviços facilitados como
+          atualização automática de jogos, e preços acessíveis
+          aos usuários.</p>
+
+          {isTabletOrMore &&
+            <div className="social-media">
+              <a href="https://www.instagram.com/gabrielaraujr">
+                <img src={InstagramIcon} alt="Ícone do instagram" />
+              </a>
+              <a href="https://www.linkedin.com/in/gabrielaraujr">
+                <img src={LinkedinIcon} alt="Ícone do linkedin" />
+              </a>
+              <a href="https://github.com/gabrielaraujr">
+                <img src={GithubIcon} alt="Ícone do github" />
+              </a>
+            </div>
+          }
+        </div>
+
+        <div className="footer-form">
+          <p>Não perca tempo, preencha e fique por dentro!</p>
+
+          <form onSubmit={handleSubmit} autoComplete="off">
+            <input type="text" value={email.footer} placeholder="email@exemplo.com" onChange={e => setEmail({ footer: e.target.value })} />
+            <Style.Button type="submit">Enviar</Style.Button>
+          </form>
+        </div>
+      </Style.Footer>
     </>
   );
 };
