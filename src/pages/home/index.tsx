@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -8,16 +8,19 @@ import "react-alice-carousel/lib/alice-carousel.css";
 
 import Header from "components/header";
 import NewsletterSection from "components/newsletter";
+import ListItem, { IGameListItem } from "components/product-item";
 import Footer from "components/footer";
 import CarouselItem, { IGameItem } from "components/carousel-item";
 
 import { data } from "data/data";
+import { smallData } from "data/data-sm";
 import * as S from "./styled";
 
 export default function Home() {
   const games = data as IGameItem[];
+  const gameList = smallData as IGameListItem[];
 
-  useEffect(() => localStorage.clear(), []);
+  // useEffect(() => localStorage.clear(), []);
 
   return (
     <React.Fragment>
@@ -25,7 +28,7 @@ export default function Home() {
       <Header />
 
       <S.CarouselSection>
-        <h3>Promoções Imperdíveis!</h3>
+        <h3>Promoções em destaque</h3>
 
         <Carousel
           autoPlay
@@ -43,6 +46,15 @@ export default function Home() {
       </S.CarouselSection>
 
       <NewsletterSection />
+
+      <S.GameListSection id="products">
+        <h3>Produtos mais vendidos</h3>
+
+        {gameList.map((game, index) => (
+          <ListItem key={index} game={game} />
+        ))}
+      </S.GameListSection>
+
       <Footer />
     </React.Fragment>
   );

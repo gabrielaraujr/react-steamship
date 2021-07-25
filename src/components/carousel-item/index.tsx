@@ -4,7 +4,6 @@ import { useMediaQuery } from "react-responsive";
 import * as S from "./styled";
 
 export interface IGameItem {
-  url: string;
   image: string;
   name: string;
   description: string;
@@ -15,7 +14,7 @@ export interface IGameItem {
   soIcons: string[];
 }
 
-export interface IGameItemProps {
+interface IGameItemProps {
   game: IGameItem;
 }
 
@@ -25,23 +24,20 @@ const CarouselItem: React.FC<IGameItemProps> = ({ game }) => {
   const isTablet = useMediaQuery({ minWidth: 700, maxWidth: 999 });
   const isMoreThenTablet = useMediaQuery({ minWidth: 1000, maxWidth: 1399 });
   const isDesktop = useMediaQuery({ minWidth: 1400 });
-  // const isTabletOrMore = useMediaQuery({ minWidth: 700 });
 
-  // const handleDragStart = (e) => e.preventDefault();
+  const anchorTo = (name: string) => {
+    window.location.href = name;
+  };
 
   return (
-    <S.Card target="_blank" href={game.url}>
-      <img src={game.image} alt={`Imagem ${game.name}`} />
+    <S.Card onClick={() => anchorTo("#products")}>
+      <img src={game.image} alt={`Imagem do jogo ${game.name}`} />
       <S.Info>
         <h4>{game.name}</h4>
 
-        {isDesktop || isTablet ? (
-          <p>{game.description}</p>
-        ) : isMobile || isMoreThenTablet ? (
-          <p>{game.shortDescription}</p>
-        ) : (
-          ""
-        )}
+        {(isDesktop || isTablet) && <p>{game.description}</p>}
+
+        {(isMobile || isMoreThenTablet) && <p>{game.shortDescription}</p>}
 
         <S.Prices>
           <div>

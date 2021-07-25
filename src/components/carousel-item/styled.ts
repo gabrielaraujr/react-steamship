@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Card = styled.a`
   line-height: 0;
   text-decoration: none;
+  cursor: pointer;
 
   img {
     width: 100%;

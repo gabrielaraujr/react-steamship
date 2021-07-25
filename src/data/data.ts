@@ -8,7 +8,6 @@ import Linux from "assets/images/linux-icon.png";
 
 export const data = [
   {
-    url: "https://store.steampowered.com/sub/127633/",
     image: BioshockImg,
     name: "Bioshock: The Collection",
     description: `Volte para as cidades de Rapture e Columbia e
@@ -25,7 +24,6 @@ export const data = [
     soIcons: [Windows, Linux],
   },
   {
-    url: "https://store.steampowered.com/app/1237950/STAR_WARS_Battlefront_II/",
     image: StarWarsImg,
     name: "STAR WARS™ Battlefront™ II",
     description: `Seja o herói na mais incrível experiência de batalha de
@@ -41,7 +39,6 @@ export const data = [
     soIcons: [Windows],
   },
   {
-    url: "https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/",
     image: RedDeadImg,
     name: "Red Dead Redemption 2",
     description: `Red Dead Redemption 2, a épica aventura de mundo
@@ -58,7 +55,6 @@ export const data = [
     soIcons: [Windows, Mac, Linux],
   },
   {
-    url: "https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition/",
     image: SkyrimImg,
     name: "The Elder Scrolls V: Special Edition",
     description: `Vencedor de mais de 200 jogos do ano Awards, Skyrim

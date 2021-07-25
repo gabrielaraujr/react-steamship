@@ -7,10 +7,19 @@ export default createGlobalStyle`
     --ship-black: #1a1a1a;
     --bg-info: #0a141d;
     --bg-prices: #040809;
-    --text-prices-dark: #628291;
-    --text-prices-light: #90cef5;
     --bg-percentage: #4b6b22;
+    --bg-list-item: #1b2838;
+    --text-prices-dark: #628291;
+    --text-list-prices-dark: #888888;
+    --text-prices-light: #90cef5;
     --text-percentage: #9ecc24;
+    --text-date: #4c6c8c;
+    --newsletter-button: #36db80;
+    --newsletter-button-dark: #029947;
+    --item-text: #d2efa9;
+    --item-button: #8ed629;
+    --item-button-dark: #6fa720;
+
     font-size: 60%;
   }
 

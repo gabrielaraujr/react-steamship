@@ -4,6 +4,10 @@ export const HeaderContent = styled.header`
   width: 100%;
   padding: 2.5rem 0;
   background-color: RGB(23, 26, 33);
+  position: fixed;
+  top: 0;
+  transition: all 0.5s;
+  z-index: 1001;
 
   @media (min-width: 700px) {
     padding: 3rem 0;
