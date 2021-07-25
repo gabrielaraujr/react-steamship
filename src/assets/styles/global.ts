@@ -20,15 +20,19 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
-  html, body, #root {
-    width: 100%;
-    height: 100%;
+  body {
     background: linear-gradient(
       180deg,
       #2f5564 0%,
       #184353 50%,
       #1b2838 100%
     );
+    color: var(--ship-black);
+  }
+
+  html, body, #root {
+    width: 100%;
+    height: 100%;
   }
 
   body,
