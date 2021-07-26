@@ -10,22 +10,16 @@ export interface IGameListItem {
   discountPercentage: string;
   oldPrice: string;
   price: string;
+  amount: number;
   soIcons: string[];
 }
 
 interface IGameListItemProps {
   game: IGameListItem;
+  addProductToCart?: (name: string) => void;
 }
 
-const ListItem: React.FC<IGameListItemProps> = ({ game }) => {
-  // Responsive Design
-  // const isMobile = useMediaQuery({ maxWidth: 699 });
-  // const isTablet = useMediaQuery({ minWidth: 700, maxWidth: 999 });
-  // const isMoreThenTablet = useMediaQuery({ minWidth: 1000, maxWidth: 1399 });
-  // const isDesktop = useMediaQuery({ minWidth: 1400 });
-
-  // const handleDragStart = (e) => e.preventDefault();
-
+const ListItem: React.FC<IGameListItemProps> = ({ game, ...rest }) => {
   return (
     <S.Card>
       <div className="card-image">
@@ -48,7 +42,10 @@ const ListItem: React.FC<IGameListItemProps> = ({ game }) => {
             </div>
           </div>
 
-          <button type="button">
+          <button
+            type="button"
+            onClick={() => rest.addProductToCart(game.name)}
+          >
             <b>+</b> Carrinho
           </button>
         </S.TopOfCard>

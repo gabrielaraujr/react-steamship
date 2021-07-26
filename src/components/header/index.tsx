@@ -10,8 +10,13 @@ import CartIcon from "assets/images/cart.svg";
 import { useAuth } from "contexts/auth";
 import * as S from "./styled";
 
-const Header: React.FC = () => {
+interface IHeader {
+  amount?: number;
+}
+
+const Header: React.FC<IHeader> = ({ amount }) => {
   const [small, setSmall] = useState(false);
+
   const history = useHistory();
   const { user, signOut } = useAuth();
 
@@ -63,6 +68,7 @@ const Header: React.FC = () => {
           <li>
             <S.LinkTo to="/cart">
               <img src={CartIcon} alt="Ícone do carrinho de compras" />
+              {amount !== 0 && <span>{amount}</span>}
             </S.LinkTo>
           </li>
           <li>

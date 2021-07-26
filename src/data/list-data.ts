@@ -20,6 +20,7 @@ export const listData = [
     discountPercentage: "",
     oldPrice: "",
     price: "R$ 75,49",
+    amount: 0,
     soIcons: [Windows],
   },
   {
@@ -29,6 +30,7 @@ export const listData = [
     discountPercentage: "",
     oldPrice: "",
     price: "R$ 32,89",
+    amount: 0,
     soIcons: [Windows],
   },
   {
@@ -38,6 +40,7 @@ export const listData = [
     discountPercentage: "-25%",
     oldPrice: "R$ 129,00",
     price: "R$ 96,75",
+    amount: 0,
     soIcons: [Windows, Linux],
   },
   {
@@ -47,6 +50,7 @@ export const listData = [
     discountPercentage: "-75%",
     oldPrice: "R$ 260,00",
     price: "R$ 104,00",
+    amount: 0,
     soIcons: [Windows, Mac, Linux],
   },
   {
@@ -56,6 +60,7 @@ export const listData = [
     discountPercentage: "",
     oldPrice: "",
     price: "R$ 52,99",
+    amount: 0,
     soIcons: [Windows, Mac, Linux],
   },
   {
@@ -65,6 +70,7 @@ export const listData = [
     discountPercentage: "-80%",
     oldPrice: "R$ 119,00",
     price: "R$ 23,80",
+    amount: 0,
     soIcons: [Windows, Linux],
   },
   {
@@ -74,6 +80,7 @@ export const listData = [
     discountPercentage: "-35%",
     oldPrice: "R$ 27,99",
     price: "R$ 18,19",
+    amount: 0,
     soIcons: [Windows, Mac, Linux],
   },
   {
@@ -83,6 +90,7 @@ export const listData = [
     discountPercentage: "-30%",
     oldPrice: "R$ 37,99",
     price: "R$ 26,59",
+    amount: 0,
     soIcons: [Windows, Linux],
   },
 
@@ -93,6 +101,7 @@ export const listData = [
     discountPercentage: "-50%",
     oldPrice: "R$ 200,00",
     price: "R$ 100,00",
+    amount: 0,
     soIcons: [Windows],
   },
   {
@@ -102,6 +111,7 @@ export const listData = [
     discountPercentage: "-40%",
     oldPrice: "R$ 230,00",
     price: "R$ 138,00",
+    amount: 0,
     soIcons: [Windows, Mac],
   },
 ];

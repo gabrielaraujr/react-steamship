@@ -1,56 +1,64 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import Carousel from "react-alice-carousel";
-import "react-alice-carousel/lib/alice-carousel.css";
-
 import Header from "components/header";
-import ListItem, { IGameListItem } from "components/product-item";
+import GameList, { IGameListItem } from "components/product-item";
 import Footer from "components/footer";
-import CarouselItem, { IGameItem } from "components/carousel-item";
 
-import { carouselData } from "data/carousel-data";
-import { listData } from "data/list-data";
+import ArrowLeft from "assets/images/arrow-left.svg";
+
 import * as S from "./styled";
 
 export default function Cart() {
-  const games = carouselData as IGameItem[];
-  const gameList = listData as IGameListItem[];
+  const history = useHistory();
+  const [games, setGames] = useState<IGameListItem[]>(() => {
+    const storagedCart = localStorage.getItem("@RocketShoes:cart");
 
-  // useEffect(() => localStorage.clear(), []);
+    if (storagedCart) {
+      return JSON.parse(storagedCart);
+    }
+
+    return [];
+  });
+
+  useEffect(() => {
+    async function loadGames() {
+      const localGame = localStorage.getItem("@Cart:games");
+      const parseLocalGame = JSON.parse(localGame) as [];
+      const gamesFormatted = parseLocalGame.map(function (game: IGameListItem) {
+        return { ...game };
+      });
+
+      setGames(gamesFormatted);
+    }
+
+    loadGames();
+  }, []);
 
   return (
     <React.Fragment>
       <ToastContainer />
       <Header />
 
-      <S.CarouselSection>
-        <h3>Promoções em destaque</h3>
+      <S.CartItems>
+        <S.BackNavigation>
+          <img
+            onClick={() => history.push("/home")}
+            src={ArrowLeft}
+            alt="Voltar para página anterior"
+          />
+          <h3>Voltar</h3>
+        </S.BackNavigation>
 
-        <Carousel
-          autoPlay
-          infinite
-          mouseTracking
-          keyboardNavigation
-          items={games.map((game, index) => (
-            <CarouselItem key={index} game={game} />
-          ))}
-          autoPlayStrategy="none"
-          autoPlayInterval={2000}
-          animationType="fadeout"
-          animationDuration={1000}
-        />
-      </S.CarouselSection>
+        <h2>Carrinho de compras</h2>
 
-      <S.GameListSection id="products">
-        <h3>Produtos mais vendidos</h3>
-
-        {gameList.map((game, index) => (
-          <ListItem key={index} game={game} />
+        {games.map((game) => (
+          <GameList key={game.name} game={game} />
         ))}
-      </S.GameListSection>
+      </S.CartItems>
 
       <Footer />
     </React.Fragment>

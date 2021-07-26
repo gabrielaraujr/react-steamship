@@ -40,7 +40,7 @@ export const Header = styled.div`
     }
   }
 
-  @media (min-width: 700px) {
+  @media (min-width: 750px) {
     div {
       img {
         width: 70px;
@@ -77,8 +77,8 @@ export const Navbar = styled.ul`
     }
 
     button {
-      width: 35px;
-      height: 35px;
+      width: 28px;
+      height: 28px;
       padding: 0.1rem;
       margin-left: 1rem;
       border-radius: 50%;
@@ -97,8 +97,8 @@ export const Navbar = styled.ul`
       }
 
       img:last-child {
-        width: 14px;
-        margin-left: 0.5rem;
+        width: 12px;
+        margin-left: 0.25rem;
       }
 
       :hover {
@@ -145,6 +145,23 @@ export const Navbar = styled.ul`
     }
   }
 
+  @media (min-width: 700px) {
+    li {
+      font-size: 1.2rem;
+      margin-left: 1rem;
+
+      button {
+        width: 35px;
+        height: 35px;
+
+        img:last-child {
+          width: 14px;
+          margin-left: 0.5rem;
+        }
+      }
+    }
+  }
+
   @media (min-width: 900px) {
     li {
       font-size: 1.6rem;
@@ -155,11 +172,40 @@ export const Navbar = styled.ul`
 
 export const LinkTo = styled(Link)`
   text-decoration: none;
+  position: relative;
 
   img {
-    margin-top: 3px;
+    width: 25px;
     :hover {
       filter: brightness(0.7);
+    }
+  }
+
+  span {
+    padding: 0.05rem 0.45rem;
+    border-radius: 50%;
+    background: var(--hiring-main);
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 700;
+    position: absolute;
+    right: -5px;
+    bottom: 0;
+  }
+
+  @media (min-width: 700px) {
+    img {
+      width: 30px;
+    }
+
+    span {
+      padding: 0.2rem 0.5rem;
+      font-size: 1.4rem;
+    }
+
+    li {
+      font-size: 1.6rem;
+      margin-left: 2rem;
     }
   }
 `;
