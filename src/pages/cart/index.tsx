@@ -28,7 +28,9 @@ export default function Cart() {
     async function loadGames() {
       const localGame = localStorage.getItem("@Cart:games");
       const parseLocalGame = JSON.parse(localGame) as [];
-      const gamesFormatted = parseLocalGame.map(function (game: IGameListItem) {
+      const gamesFormatted = parseLocalGame?.map(function (
+        game: IGameListItem
+      ) {
         return { ...game };
       });
 
@@ -55,9 +57,11 @@ export default function Cart() {
 
         <h2>Carrinho de compras</h2>
 
-        {games.map((game) => (
-          <GameList key={game.name} game={game} />
-        ))}
+        {games?.length > 0 ? (
+          games?.map((game) => <GameList key={game.name} game={game} />)
+        ) : (
+          <p>Não há produtos no carrinho.</p>
+        )}
       </S.CartItems>
 
       <Footer />

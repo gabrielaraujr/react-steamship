@@ -16,6 +16,15 @@ export const CartItems = styled.section`
     margin: 0 auto 1.5rem auto;
     text-shadow: 3px 4px 0px black;
   }
+
+  p {
+    width: 60%;
+    color: #fff;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin: 3rem auto 0;
+  }
 `;
 
 export const BackNavigation = styled.div`
