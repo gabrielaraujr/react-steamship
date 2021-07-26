@@ -12,7 +12,7 @@ import Windows from "assets/images/windows-icon.png";
 import Mac from "assets/images/mac-icon.png";
 import Linux from "assets/images/linux-icon.png";
 
-export const smallData = [
+export const listData = [
   {
     image: NewWorldImg,
     name: "New World",

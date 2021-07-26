@@ -6,7 +6,7 @@ import Windows from "assets/images/windows-icon.png";
 import Mac from "assets/images/mac-icon.png";
 import Linux from "assets/images/linux-icon.png";
 
-export const data = [
+export const carouselData = [
   {
     image: BioshockImg,
     name: "Bioshock: The Collection",

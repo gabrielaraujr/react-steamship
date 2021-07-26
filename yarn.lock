@@ -9052,6 +9052,11 @@ raw-body@2.4.0:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
+react-accessible-dropdown-menu-hook@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/react-accessible-dropdown-menu-hook/-/react-accessible-dropdown-menu-hook-2.3.0.tgz#a56fbe110d092c071a0af642ca84d6886580fb01"
+  integrity sha512-MbGDDEtlKDwGEt261eWmhH26kmKXPzrJzo94RnbqREvGzTXmdxapHgblBMor0jhgMPtFLawzWoR0BsbrZoSe9g==
+
 react-alice-carousel@^2.5.1:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/react-alice-carousel/-/react-alice-carousel-2.5.1.tgz#d8b27f942d342bf57367eb2c3301358a28758381"

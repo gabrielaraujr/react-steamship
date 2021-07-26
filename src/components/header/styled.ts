@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const HeaderContent = styled.header`
   width: 100%;
@@ -39,24 +40,6 @@ export const Header = styled.div`
     }
   }
 
-  ul {
-    display: flex;
-    list-style-type: none;
-
-    li {
-      font-family: Archivo, sans-serif;
-      font-size: 1.4rem;
-      text-transform: uppercase;
-      margin-left: 1rem;
-      cursor: pointer;
-      transition: all 0.25s;
-      color: #b8b6b4;
-      :hover {
-        color: #fff;
-      }
-    }
-  }
-
   @media (min-width: 700px) {
     div {
       img {
@@ -73,13 +56,110 @@ export const Header = styled.div`
       }
     }
   }
+`;
 
-  @media (min-width: 900px) {
-    ul {
-      li {
-        font-size: 1.6rem;
-        margin-left: 2rem;
+export const Navbar = styled.ul`
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+
+  li {
+    font-family: Archivo, sans-serif;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    margin-left: 1rem;
+    cursor: pointer;
+    transition: all 0.25s;
+    color: #b8b6b4;
+
+    :hover {
+      color: #fff;
+    }
+
+    button {
+      width: 35px;
+      height: 35px;
+      padding: 0.1rem;
+      margin-left: 1rem;
+      border-radius: 50%;
+      cursor: pointer;
+      outline: none;
+      border: none;
+      box-shadow: 0 0 5px 3px rgba(69, 134, 188, 0.8);
+
+      display: flex;
+      align-items: center;
+
+      img:first-child {
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+      }
+
+      img:last-child {
+        width: 14px;
+        margin-left: 0.5rem;
+      }
+
+      :hover {
+        opacity: 0.9;
       }
     }
-  } ;
+
+    div[role="menu"] {
+      visibility: hidden;
+      position: absolute;
+      right: 8%;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem 0;
+      border: 1px solid var(--text-list-prices-dark);
+      border-radius: 5px;
+
+      hr {
+        width: 100%;
+        border: 1px solid #e1e1e1;
+        margin: 1rem 0;
+      }
+
+      a {
+        width: 100%;
+        color: #6d6d6d;
+        padding: 1rem 2rem;
+        text-transform: none;
+        font-family: Archivo, sans-serif;
+        letter-spacing: 0.5px;
+        cursor: text;
+
+        :not(:first-child):hover {
+          color: #000;
+          background: #e1e1e1;
+          cursor: pointer;
+        }
+      }
+    }
+
+    div[role="menu"].visible {
+      visibility: visible;
+    }
+  }
+
+  @media (min-width: 900px) {
+    li {
+      font-size: 1.6rem;
+      margin-left: 2rem;
+    }
+  }
+`;
+
+export const LinkTo = styled(Link)`
+  text-decoration: none;
+
+  img {
+    margin-top: 3px;
+    :hover {
+      filter: brightness(0.7);
+    }
+  }
 `;

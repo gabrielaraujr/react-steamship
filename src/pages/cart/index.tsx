@@ -7,7 +7,6 @@ import Carousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 
 import Header from "components/header";
-import NewsletterSection from "components/newsletter";
 import ListItem, { IGameListItem } from "components/product-item";
 import Footer from "components/footer";
 import CarouselItem, { IGameItem } from "components/carousel-item";
@@ -16,7 +15,7 @@ import { carouselData } from "data/carousel-data";
 import { listData } from "data/list-data";
 import * as S from "./styled";
 
-export default function Home() {
+export default function Cart() {
   const games = carouselData as IGameItem[];
   const gameList = listData as IGameListItem[];
 
@@ -44,8 +43,6 @@ export default function Home() {
           animationDuration={1000}
         />
       </S.CarouselSection>
-
-      <NewsletterSection />
 
       <S.GameListSection id="products">
         <h3>Produtos mais vendidos</h3>

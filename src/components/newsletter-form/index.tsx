@@ -14,22 +14,19 @@ toast.configure({
 const NewsletterForm: React.FC = () => {
   const [email, setEmail] = useState("");
 
-  const handleSubmit = (e: React.FormEvent): void => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (email === "") {
-      toast.warning("Digite um e-mail!");
+      return toast.warning("Digite um e-mail!");
     }
 
     if (email && !email.includes("@")) {
-      toast.warning("Digite um e-mail válido!");
+      return toast.warning("Digite um e-mail válido!");
     }
 
-    if (email && email.includes("@")) {
-      localStorage.setItem("email", email);
-      toast.success("Email cadastrado com sucesso!");
-    }
-
+    localStorage.setItem("@Newsletter", email);
+    toast.success("Email cadastrado com sucesso!");
     setEmail("");
   };
 

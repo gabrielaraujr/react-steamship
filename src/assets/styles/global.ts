@@ -19,6 +19,8 @@ export default createGlobalStyle`
     --item-text: #d2efa9;
     --item-button: #8ed629;
     --item-button-dark: #6fa720;
+    --hiring-main: #f80186;
+    --hiring-button-hover: #cbdae1;
 
     font-size: 60%;
   }
@@ -41,7 +43,7 @@ export default createGlobalStyle`
 
   html, body, #root {
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
   }
 
   body,
