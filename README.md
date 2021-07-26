@@ -1,36 +1,72 @@
-## Available Scripts
+# Steamship
 
-In the project directory, you can run:
+Desafio 02 do Hiring Coders: **Gestão de Cadastros**.
 
-### `yarn start`
+# Resumo do projeto
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Criação de um sistema e-commerce para inventário de produtos e dados de clientes.
 
-### `yarn test`
+Link do projeto em produção: 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Steamship](https://steamship.netlify.app/)
 
-### `yarn build`
+Basicamente o objetivo é vender jogos virtuais.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Entregáveis
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [x]  Os dados de clientes, endereços e produtos devem estar devidamente estruturados
+- [x]  Dados no localstorage
+- [x]  Código fonte no github com o arquivo README detalhando as funcionalidades da programação
 
-### `yarn eject`
+# Passos para executar o projeto
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Primeiro rode o comando: `**yarn`** dentro da raiz do projeto ****para instalar as dependências do mesmo.
+2. Em seguida rode: **`yarn start`** para executar o aplicativo em modo desenvolvedor, irá abrir na porta padrão [http://localhost:3000](http://localhost:3000/) no seu browser.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Funcionalidades
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+---
+
+![Autenticação](https://i.imgur.com/aOe6dzL.png)
+
+Autenticação
+
+![Tratamentos de erros](https://i.imgur.com/eodBUNL.png)
+
+Tratamentos de erros
+
+![Email inválido](https://i.imgur.com/RaUdDBz.png)
+
+Email inválido
+
+![Página principal](https://i.imgur.com/HYt1Ikr.png)
+
+Página principal responsiva
+
+![Produtos](https://i.imgur.com/bPmGjbi.png)
+
+Produtos para inserir no carrinho
+
+![Compras e logout](https://i.imgur.com/IG6q886.png)
+
+Inserindo compras no carrinho através do localstorage e menu para fazer logout ou administrar os dados
+
+![Administrar dados](https://i.imgur.com/XcT7ZWA.png)
+
+Tela de administrar dados do cliente (faltante apenas a edição do mesmo)
+
+![Carrinho de compras](https://i.imgur.com/0pAHCuV.png)
+
+E por final o carrinho de compras (faltante apenas as contagens de cada produto e finalização da compra)
+
+# Dificuldades e conclusão
+
+---
+
+Curti muito o projeto, apesar de já ter um pouco de conhecimento sobre react. Gostei muito desse tema pois percebi no meio do desenvolvimento que deveria ter trabalhado mais com contexts, isso me fez atrasar muito e quebrar mais ainda a cabeça pra ligar alguns estados.
