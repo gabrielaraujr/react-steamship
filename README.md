@@ -60,9 +60,3 @@ Tela de administrar dados do cliente (faltante apenas a edição do mesmo)
 
 E por final o carrinho de compras (faltante apenas as contagens de cada produto e finalização da compra)
 ![Carrinho de compras](https://i.imgur.com/0pAHCuV.png)
-
-
-### Dificuldades e conclusão
-
-
-Curti muito o projeto, apesar de já ter um pouco de conhecimento sobre react. Gostei muito desse tema pois percebi no meio do desenvolvimento que deveria ter trabalhado mais com contexts, isso me fez atrasar muito e quebrar mais ainda a cabeça pra ligar alguns estados.
