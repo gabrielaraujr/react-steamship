@@ -7,9 +7,7 @@ Desafio 02 do Hiring Coders: **Gestão de Cadastros**.
 
 Criação de um sistema e-commerce para inventário de produtos e dados de clientes.
 
-Link do projeto em produção: 
-
-[Steamship](https://steamship.netlify.app/)
+Link do projeto em produção: [Steamship](https://steamship.netlify.app/)
 
 Basicamente o objetivo é vender jogos virtuais.
 
