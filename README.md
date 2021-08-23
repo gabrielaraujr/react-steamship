@@ -4,7 +4,6 @@ Desafio 02 do Hiring Coders: **Gestão de Cadastros**.
 
 # Resumo do projeto
 
----
 
 Criação de um sistema e-commerce para inventário de produtos e dados de clientes.
 
@@ -16,7 +15,6 @@ Basicamente o objetivo é vender jogos virtuais.
 
 # Entregáveis
 
----
 
 - [x]  Os dados de clientes, endereços e produtos devem estar devidamente estruturados
 - [x]  Dados no localstorage
@@ -24,14 +22,12 @@ Basicamente o objetivo é vender jogos virtuais.
 
 # Passos para executar o projeto
 
----
 
 1. Primeiro rode o comando: `**yarn`** dentro da raiz do projeto ****para instalar as dependências do mesmo.
 2. Em seguida rode: **`yarn start`** para executar o aplicativo em modo desenvolvedor, irá abrir na porta padrão [http://localhost:3000](http://localhost:3000/) no seu browser.
 
 # Funcionalidades
 
----
 
 ![Autenticação](https://i.imgur.com/aOe6dzL.png)
 
@@ -67,6 +63,5 @@ E por final o carrinho de compras (faltante apenas as contagens de cada produto 
 
 # Dificuldades e conclusão
 
----
 
 Curti muito o projeto, apesar de já ter um pouco de conhecimento sobre react. Gostei muito desse tema pois percebi no meio do desenvolvimento que deveria ter trabalhado mais com contexts, isso me fez atrasar muito e quebrar mais ainda a cabeça pra ligar alguns estados.
