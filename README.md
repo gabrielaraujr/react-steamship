@@ -27,37 +27,37 @@ Basicamente o objetivo é vender jogos virtuais.
 ### Funcionalidades
 
 
+Autenticação
 ![Autenticação](https://i.imgur.com/aOe6dzL.png)
 
-Autenticação
-
-![Tratamentos de erros](https://i.imgur.com/eodBUNL.png)
 
 Tratamentos de erros
+![Tratamentos de erros](https://i.imgur.com/eodBUNL.png)
 
-![Email inválido](https://i.imgur.com/RaUdDBz.png)
 
 Email inválido
+![Email inválido](https://i.imgur.com/RaUdDBz.png)
 
-![Página principal](https://i.imgur.com/HYt1Ikr.png)
 
 Página principal responsiva
+![Página principal](https://i.imgur.com/HYt1Ikr.png)
 
-![Produtos](https://i.imgur.com/bPmGjbi.png)
 
 Produtos para inserir no carrinho
+![Produtos](https://i.imgur.com/bPmGjbi.png)
 
-![Compras e logout](https://i.imgur.com/IG6q886.png)
 
 Inserindo compras no carrinho através do localstorage e menu para fazer logout ou administrar os dados
+![Compras e logout](https://i.imgur.com/IG6q886.png)
 
-![Administrar dados](https://i.imgur.com/XcT7ZWA.png)
 
 Tela de administrar dados do cliente (faltante apenas a edição do mesmo)
+![Administrar dados](https://i.imgur.com/XcT7ZWA.png)
 
-![Carrinho de compras](https://i.imgur.com/0pAHCuV.png)
 
 E por final o carrinho de compras (faltante apenas as contagens de cada produto e finalização da compra)
+![Carrinho de compras](https://i.imgur.com/0pAHCuV.png)
+
 
 ### Dificuldades e conclusão
 
