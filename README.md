@@ -1,3 +1,6 @@
+![Steamship](https://i.imgur.com/QpBLga7.png)
+
+
 # Steamship
 
 Desafio 02 do Hiring Coders: **Gestão de Cadastros**.
